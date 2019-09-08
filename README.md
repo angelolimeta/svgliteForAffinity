@@ -2,13 +2,17 @@
 
 ## Export svg plots in R for Affinity Designer
 
-I noticed that the ggsave function in R used to save plots in svg format are loaded incorrectly in Affinity Designer due to inproper formatting.
+Scalable Vector Graphics (SVG) is an XML-based vector image format for two-dimensional graphics with support for interactivity and animation. I find it convenient to work with since details in plots and figures are not lost when zooming in. 
 
-For example, the following plot:
+Editing SVG files can be done through vector graphics editors such as Adobe Illustrator or Affinity Designer, the latter being free of charge for anyone working at Chalmers. Plots and figures generated in R can be saved in SVG format using the ggsave function from the ggplot package.
+
+However, I noticed that figures saved through ggsave the ggsave are loaded incorrectly in Affinity Designer due to inproper formatting (more details further down).
+
+__For example, the following plot:__
 
 ![alt text](https://raw.githubusercontent.com/angelolimeta/svgliteForAffinity/master/Correct.png)
 
-Looks like this when opened in Affinity Designer:
+__Looks like this when opened in Affinity Designer:__
 
 ![alt text](https://raw.githubusercontent.com/angelolimeta/svgliteForAffinity/master/Incorrect.png)
 
