@@ -1,8 +1,8 @@
 # svgliteForAffinity
 
-### Export svg plots in R for Affinity Designer
+## Export svg plots in R for Affinity Designer
 
-I noticed that ggsave function in R used to save plots in svg format are loaded incorrectly in Affinity Designer due to inproper formatting.
+I noticed that the ggsave function in R used to save plots in svg format are loaded incorrectly in Affinity Designer due to inproper formatting.
 
 For example, the following plot:
 
@@ -11,6 +11,31 @@ For example, the following plot:
 Looks like this when opened in Affinity Designer:
 
 ![alt text](https://raw.githubusercontent.com/angelolimeta/svgliteForAffinity/master/Incorrect.png)
+
+## How to fix:
+
+First, uninstall the svglite package from R if you already have it installed.
+Run this command in R studio:
+```r
+remove.packages("svglite", lib="~/Library/R/3.6/library")
+```
+
+Next, download the file "svglite_1.2.2.tar.gz" from this repo. Either click on the file and hit download or use wget from a terminal:
+
+```bash
+wget https://github.com/angelolimeta/svgliteForAffinity/raw/master/svglite_1.2.2.tar.gz
+```
+
+Finally, install the package in R studio with the install.packages command:
+
+```r
+install.packages("/path/to/svglite_1.2.2.tar.gz", repos = NULL)
+```
+(Note that you need to replace /path/to/ with the path to the downloaded file)
+
+__Now you can save correctly formatted plots for use with Affinity Designer!__
+
+## Changes made to the svglite package
 
 Apparently Affinity Designer's SVG parser doesn't handle the formating for multiple CSS style tags this way:
 ```xml
@@ -202,5 +227,5 @@ Lastly, install the modified archive:
 R CMD INSTALL svglite_1.2.2.tar.gz
 ```
 
-Now you can use this version of the svglite package together with ggplot in R!
+__Now you can use this version of the svglite package together with ggplot in R and have your figures load correctly in Affinity Desinger!__
 
