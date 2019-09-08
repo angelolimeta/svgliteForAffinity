@@ -5,9 +5,11 @@
 I noticed that ggsave function in R used to save plots in svg format are loaded incorrectly in Affinity Designer due to inproper formatting.
 
 For example, the following plot:
+
 ![alt text](https://raw.githubusercontent.com/angelolimeta/svgliteForAffinity/master/Correct.png)
 
 Looks like this when opened in Affinity Designer:
+
 ![alt text](https://raw.githubusercontent.com/angelolimeta/svgliteForAffinity/master/Incorrect.png)
 
 Apparently Affinity Designer's SVG parser doesn't handle the formating for multiple CSS style tags this way:
