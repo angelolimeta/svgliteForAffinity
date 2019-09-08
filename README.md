@@ -1,10 +1,16 @@
 # svgliteForAffinity
 
-** Export svg plots in R for Affinity Designer
+### Export svg plots in R for Affinity Designer
 
-The ggsave function in R used to save plots in svg format are loaded incorrectly in Affinity Designer due to inproper formatting.
+I noticed that ggsave function in R used to save plots in svg format are loaded incorrectly in Affinity Designer due to inproper formatting.
 
-Affinity Designer's SVG parser doesn't handle the formating for multiple CSS style tags this way:
+For example, the following plot:
+![alt text](https://raw.githubusercontent.com/angelolimeta/svgliteForAffinity/master/Correct.png)
+
+Looks like this when opened in Affinity Designer:
+![alt text](https://raw.githubusercontent.com/angelolimeta/svgliteForAffinity/master/Incorrect.png)
+
+Apparently Affinity Designer's SVG parser doesn't handle the formating for multiple CSS style tags this way:
 ```xml
 <?xml version='1.0' encoding='UTF-8' ?>
 <svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 216.00 270.00'>
